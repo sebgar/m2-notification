@@ -1,0 +1,18 @@
+{
+    "sga_notification": {
+        "column": {
+            "notification_id": true,
+            "code": true,
+            "entity": true,
+            "entity_id": true,
+            "created_at": true,
+            "updated_at": true,
+            "parameters": true,
+            "status": true,
+            "user_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
