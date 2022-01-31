@@ -3,8 +3,10 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Sga_Core::core">
-                    <resource id="Sga_Notification::notification" title="Notification" translate="title" sortOrder="100" />
+                <resource id="Magento_Backend::system">
+                    <resource id="Magento_Backend::system_other_settings">
+                        <resource id="Sga_Notification::notification" title="SGA Notification" translate="title" sortOrder="100" />
+                    </resource>
                 </resource>
             </resource>
         </resources>
