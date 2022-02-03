@@ -7,7 +7,7 @@ use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
-class Actions extends Column
+class Label extends Column
 {
     protected $urlBuilder;
     protected $_scopeConfig;
@@ -38,29 +38,10 @@ class Actions extends Column
             $entities = $this->_scopeConfig->get('system', 'default/sga_notification/entities');
 
             foreach ($dataSource['data']['items'] as & $item) {
-                $name = $this->getData('name');
-                if (isset($item['notification_id'])) {
-
-                    $url = '';
-                    if (isset($entities[$item['code']])) {
-                        $url = $this->urlBuilder->getUrl($entities[$item['code']]['route'], [$entities[$item['code']]['object_id'] => $item['entity_id']]);
-                    }
-                    if ($url !== '') {
-                        $item[$name]['edit'] = [
-                            'href' => $url,
-                            'label' => __('See')
-                        ];
-                    }
-
-                    $item[$name]['delete'] = [
-                        'href' => $this->urlBuilder->getUrl('notification/notification/delete', ['notification_id' => $item['notification_id']]),
-                        'label' => __('Delete'),
-                        'confirm' => [
-                            'title' => __('Delete %1', $name),
-                            'message' => __('Are you sure you want to delete %1 ?', $name)
-                        ],
-                        'post' => true
-                    ];
+                if (isset($item['code']) && isset($entities[$item['code']]['label'])) {
+                    $item['label'] = $entities[$item['code']]['label'];
+                } else {
+                    $item['label'] = $item['code'];
                 }
             }
         }

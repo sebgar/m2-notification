@@ -3,14 +3,16 @@
     <default>
         <sga_notification>
             <entities>
-                <product>
+                <create_product>
+                    <label>Product Create</label>
                     <route>catalog/product/edit</route>
                     <object_id>id</object_id>
-                </product>
-                <order>
+                </create_product>
+                <create_order>
+                    <label>Order Create</label>
                     <route>sales/order/view</route>
                     <object_id>order_id</object_id>
-                </order>
+                </create_order>
             </entities>
         </sga_notification>
     </default>

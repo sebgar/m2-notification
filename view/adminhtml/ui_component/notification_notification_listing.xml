@@ -127,17 +127,10 @@
             </settings>
         </column>
 
-        <column name="code" sortOrder="10">
+        <column name="label" sortOrder="10" class="Sga\Notification\Ui\Component\Notification\Listing\Column\Label">
             <settings>
                 <filter>text</filter>
-                <label translate="true">Code</label>
-            </settings>
-        </column>
-
-        <column name="entity" sortOrder="20">
-            <settings>
-                <filter>text</filter>
-                <label translate="true">Entity</label>
+                <label translate="true">Label</label>
             </settings>
         </column>
 
