@@ -127,9 +127,11 @@
             </settings>
         </column>
 
-        <column name="label" sortOrder="10" class="Sga\Notification\Ui\Component\Notification\Listing\Column\Label">
+        <column name="code" sortOrder="10" component="Magento_Ui/js/grid/columns/select">
             <settings>
-                <filter>text</filter>
+                <options class="Sga\Notification\Model\Config\Source\Code"/>
+                <filter>select</filter>
+                <dataType>select</dataType>
                 <label translate="true">Label</label>
             </settings>
         </column>
