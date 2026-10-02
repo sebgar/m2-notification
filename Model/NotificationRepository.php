@@ -84,7 +84,7 @@ class NotificationRepository implements NotificationRepositoryInterface
         return $searchResults;
     }
 
-    public function count(SearchCriteriaInterface $criteria = null)
+    public function count(?SearchCriteriaInterface $criteria = null)
     {
         $collection = $this->modelCollectionFactory->create();
         if ($criteria !== null) {
